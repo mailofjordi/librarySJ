@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import promiseMiddleWare from 'redux-promise';
 
-import BookList from './components/bookList';
+import App from "./components/App";
+import reducers from './reducers';
 
-let bookList = [
-    {'id': 1, 'title': "title 1", 'author': "author 1"},
-    {'id': 2, 'title': "title 2", 'author': "author 2"}
-];
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleWare)(createStore);
 
 ReactDom.render(
-    <BookList bookList={bookList}/>,
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <App/>
+    </Provider>,
     document.getElementById('app')
 );
