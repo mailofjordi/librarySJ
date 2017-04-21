@@ -1,12 +1,20 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {showBookList} from "../actions/index";
 
 class Menu extends Component {
+
     render() {
         return (
             <div>
-                <input type="button" value="Ver lista libros"/>
+                <input type="button" onClick={showBookList} value="Ver lista libros"/>
             </div>);
     }
 }
 
-export default Menu;
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({showBookList}, dispatch)
+}
+
+export default connect(mapDispatchToProps)(Menu);

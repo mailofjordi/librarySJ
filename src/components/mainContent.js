@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import BookList from "./bookList";
+import {connect} from "react-redux";
 
 class MainContent extends Component{
-    render(){
+    render(){console.log('asdfasdfasdfasdf');
         let currentComponent = null;
 
-        if (this.props.currentComponent === 'book_list') {
+        if (this.props.currentContent === 'book_list') {
             currentComponent = <BookList/>;
         }
 
@@ -13,4 +14,10 @@ class MainContent extends Component{
     }
 }
 
-export default MainContent;
+function mapStateToProps(state) {
+    return {
+        currentContent: state.currentContent
+    }
+}
+
+export default connect(null, mapStateToProps)(MainContent);
