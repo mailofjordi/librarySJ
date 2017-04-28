@@ -3,7 +3,7 @@ import BookList from "./bookList";
 import {connect} from "react-redux";
 
 class MainContent extends Component{
-    render(){console.log('asdfasdfasdfasdf');
+    render(){
         let currentComponent = null;
 
         if (this.props.currentContent === 'book_list') {
