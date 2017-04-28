@@ -16,8 +16,8 @@ class MainContent extends Component{
 
 function mapStateToProps(state) {
     return {
-        currentContent: state.currentContent
+        currentContent: state.books.currentContent
     }
 }
 
-export default connect(null, mapStateToProps)(MainContent);
+export default connect(mapStateToProps)(MainContent);

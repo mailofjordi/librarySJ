@@ -5,6 +5,8 @@ import {connect} from "react-redux";
 class BookList extends Component {
 
     render() {
+
+        console.log('booklist');
         let bookList;
 
         if (undefined !== this.props.bookList) {
@@ -23,7 +25,7 @@ class BookList extends Component {
 
 function mapStateToProps(state) {
     return {
-        bookList: state.books
+        bookList: state.books.books
     }
 }
 
