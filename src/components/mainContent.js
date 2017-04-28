@@ -16,7 +16,7 @@ class MainContent extends Component{
 
 function mapStateToProps(state) {
     return {
-        currentContent: state.books.currentContent
+        currentContent: state.currentContent
     }
 }
 

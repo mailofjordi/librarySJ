@@ -1,9 +1,9 @@
 import {SHOW_BOOK_LIST} from '../actions/index';
 
-export default function (state = {}, action) {
+export function ReducerBookList(state = [], action) {
     switch (action.type) {
         case SHOW_BOOK_LIST:
-            return {'currentContent': 'book_list', 'books': action.payload.data};
+            return action.payload.data;
         default:
             return state;
     }
