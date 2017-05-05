@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import {showBookDetails} from "../actions/index";
+import {connect} from "react-redux";
 
-class Book extends Component {
+export class Book extends Component {
     render() {
         return (
             <div>
-                <div>Título: {this.props.title}</div>
-                <div>Autor: {this.props.author}</div>
+                <div>Título: {this.props.book.title}</div>
+                <div>Autor: {this.props.book.author}</div>
+                <input type="button" onClick={() => this.props.showBookDetails(this.props.book.id)} value="Editar"/>
             </div>
         );
     }
 }
 
-export default Book;
+export default connect(null, {showBookDetails})(Book);

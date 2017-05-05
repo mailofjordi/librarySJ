@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Book from "./book";
+import {Book} from "./book";
 import {connect} from "react-redux";
 
 class BookList extends Component {
@@ -11,7 +11,7 @@ class BookList extends Component {
 
         if (undefined !== this.props.bookList) {
             bookList = this.props.bookList.map((book) => {
-                return <Book key={book.id} title={book.title} author={book.author}/>
+                return <Book key={book.id} book={book} />
             });
         }
 
@@ -25,7 +25,7 @@ class BookList extends Component {
 
 function mapStateToProps(state) {
     return {
-        bookList: state.bookList
+        bookList: state.books.bookList
     }
 }
 

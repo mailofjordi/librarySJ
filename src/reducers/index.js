@@ -4,7 +4,7 @@ import {ReducerBookList} from './ReducerBookList';
 
 const rootReducer = combineReducers({
     currentContent: ReducerCurrentContent,
-    bookList: ReducerBookList
+    books: ReducerBookList
 });
 
 export default rootReducer;
