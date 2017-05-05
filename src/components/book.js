@@ -4,7 +4,7 @@ class Book extends Component {
     render() {
         return (
             <div>
-                <div>Título: {this.props.title}</div>
+                <div>TÃ­tulo: {this.props.title}</div>
                 <div>Autor: {this.props.author}</div>
             </div>
         );
