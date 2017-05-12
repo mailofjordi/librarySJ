@@ -14,9 +14,9 @@ export function showBookList() {
 }
 
 
-export function showBookDetails(book) {
+export function showBookDetails(currentBookIndex) {
     return {
         type: SHOW_BOOK_DETAILS,
-        payload: book
+        payload: currentBookIndex
     }
 }

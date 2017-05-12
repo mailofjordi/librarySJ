@@ -9,8 +9,8 @@ class BookList extends Component {
         let bookList;
 
         if (undefined !== this.props.bookList) {
-            bookList = this.props.bookList.map((book) => {
-                return <Book key={book.id} book={book} />
+            bookList = this.props.bookList.map((book, index) => {
+                return <Book key={book.id} bookIndex={index} book={book} />
             });
         }
 

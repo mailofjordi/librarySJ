@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import BookList from "./bookList";
 import {connect} from "react-redux";
+import BookList from "./bookList";
+import BookDetails from "./bookDetails";
 
 class MainContent extends Component{
     render(){
@@ -8,6 +9,8 @@ class MainContent extends Component{
 
         if (this.props.currentContent === 'book_list') {
             currentComponent = <BookList/>;
+        } else if (this.props.currentContent === 'book_details') {
+            currentComponent = <BookDetails/>;
         }
 
         return (currentComponent);
