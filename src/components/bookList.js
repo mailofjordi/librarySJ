@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import {Book} from "./book";
+import Book from "./book";
 import {connect} from "react-redux";
 
 class BookList extends Component {
 
     render() {
 
-        console.log('booklist');
         let bookList;
 
         if (undefined !== this.props.bookList) {

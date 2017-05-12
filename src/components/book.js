@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {showBookDetails} from "../actions/index";
 import {connect} from "react-redux";
 
-export class Book extends Component {
+class Book extends Component {
     render() {
         return (
             <div>
