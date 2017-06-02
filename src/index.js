@@ -1,19 +1,28 @@
+import 'babel-polyfill';
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import promiseMiddleWare from 'redux-promise';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './sagas';
+import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
 
 import App from "./components/App";
 import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware(promiseMiddleWare)(createStore);
+let sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+    reducers,
+    composeWithDevTools(
+        applyMiddleware(promiseMiddleWare, sagaMiddleware)
+    )
+);
+
+sagaMiddleware.run(rootSaga);
 
 ReactDom.render(
-    <Provider store={createStoreWithMiddleware(
-        reducers,
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )}>
+    <Provider store={store}>
         <App/>
     </Provider>,
     document.getElementById('app')

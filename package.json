@@ -8,7 +8,7 @@
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": ""
   },
-  "author": "Sebas and Jordi Martínez",
+  "author": "Sebas and Jordi Martï¿½nez",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-stage-1": "^6.22.0",
     "lodash": "^4.17.4",
     "react": "^15.4.2",
@@ -32,6 +33,8 @@
     "react-redux": "^5.0.3",
     "react-router": "^4.0.0",
     "redux": "^3.6.0",
-    "redux-promise": "^0.5.3"
+    "redux-devtools-extension": "^2.13.2",
+    "redux-promise": "^0.5.3",
+    "redux-saga": "^0.15.3"
   }
 }

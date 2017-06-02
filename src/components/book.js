@@ -8,7 +8,7 @@ class Book extends Component {
             <div>
                 <div>Título: {this.props.book.title}</div>
                 <div>Autor: {this.props.book.author}</div>
-                <input type="button" onClick={() => this.props.showBookDetails(this.props.bookIndex)} value="Editar"/>
+                <input type="button" onClick={() => this.props.showBookDetails(this.props.bookIndex, this.props.book.id)} value="Editar"/>
             </div>
         );
     }
